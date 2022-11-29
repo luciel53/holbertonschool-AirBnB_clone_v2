@@ -8,7 +8,7 @@
         <UL>
             {{% for i in all_states|sort(attribute='name') %}}
             <LI>{{ state.id }}: <B>{{ state.name }}</B></LI>
-
+            {% endfor %}
         </UL>
     </BODY>
 </HTML>
