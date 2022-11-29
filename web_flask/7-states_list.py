@@ -9,7 +9,6 @@ from models.state import State
 app = Flask(__name__)
 
 
-""" Declare a method to handle @app.teardown_appcontext """
 @app.teardown_appcontext
 def teardown(self):
     """remove the current SQLAlchemy Session: """
