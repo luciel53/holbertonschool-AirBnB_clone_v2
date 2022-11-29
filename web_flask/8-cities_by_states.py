@@ -19,7 +19,7 @@ def teardown(self):
 def display_cities_by_states():
     """displays states"""
     all_states = storage.all(State)
-    return render_template('8-cities_by_states', all_states=all_states)
+    return render_template('8-cities_by_states.html', all_states=all_states)
 
 
 if __name__ == "__main__":
