@@ -18,7 +18,7 @@ def teardown(self):
 @app.route('/states', strict_slashes=False)
 def display_states():
     """displays states"""
-    states = storage.all(State)
+    states = storage.all("State")
     return render_template('9-states.html', all_states=states)
 
 
@@ -29,6 +29,7 @@ def states_id(id):
         if state.id == id:
             return render_template("9-states.html", state=state)
     return render_template("9-states.html")
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
