@@ -28,7 +28,7 @@ def display_state_id():
     states_id = storage.all(State).values()
 
     for state in states_id:
-        if id == states_id.id:
+        if id == state.id:
             return render_template('9-states.html', states_id=states_id)
         else:
             return render_template('9-states.html', n_found=True)
