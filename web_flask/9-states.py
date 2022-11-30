@@ -22,16 +22,13 @@ def display_states():
     return render_template('9-states.html', all_states=states)
 
 
-@app.route('/states/<id>', strict_slashes=False)
-def display_state_id():
-    """displays id states"""
-    states_id = storage.all(State).values()
-
-    if id == states_id.id:
-        return render_template('9-states.html', states_id=states_id)
-    else:
-        return render_template('9-states.html', n_found=True)
-
+@app.route("/states/<id>", strict_slashes=False)
+def states_id(id):
+    """Displays an HTML page with info about <id>, if it exists."""
+    for state in storage.all("State").values():
+        if state.id == id:
+            return render_template("9-states.html", state=state)
+    return render_template("9-states.html")
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
