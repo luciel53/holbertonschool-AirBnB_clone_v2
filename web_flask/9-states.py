@@ -27,8 +27,7 @@ def display_states_cities():
             if state.id == id:
                 var = state
 
-    return render_template('9-states.html', states_all=states_all, var=var,
-                           id=id)
+    return render_template('9-states.html', states_all=states_all, var=var)
 
 
 if __name__ == "__main__":
