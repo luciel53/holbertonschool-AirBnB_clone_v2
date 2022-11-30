@@ -1,0 +1,14 @@
+body {
+	/* 0-Inline styling Write an HTML page that displays a header and a footer. */
+	margin: 0;
+	padding: 0;
+	color: #484848;
+	font-size: 14px;
+	font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.container {
+	/* 4-Search - Container */
+	max-width: 1000px;
+	margin: 30px auto;
+}
