@@ -15,20 +15,20 @@ def teardown(self):
     storage.close()
 
 
-@app.route('/states', strict_slashes=False)
-def display_states():
-    """displays states"""
-    states = storage.all("State")
-    return render_template('9-states.html', all_states=states)
-
-
+@app.route("/states", strict_slashes=False)
 @app.route("/states/<id>", strict_slashes=False)
-def states_id(id):
-    """Displays an HTML page with info about <id>, if it exists."""
-    for state in storage.all("State").values():
-        if state.id == id:
-            return render_template("9-states.html", state=state)
-    return render_template("9-states.html")
+def display_states_cities():
+    """displays states and cities"""
+    states_all = storage.all(State).values()
+    var = None
+
+    if id:
+        for state in states_all:
+            if state.id == id:
+                var = state
+
+    return render_template('9-states.html', states_all=states_all, var=var,
+                           id=id)
 
 
 if __name__ == "__main__":
