@@ -22,7 +22,7 @@ def display_states_cities():
     states_all = storage.all(State).values()
     var = None
 
-    if id:
+    if id is not None:
         for state in states_all:
             if state.id == id:
                 var = state
